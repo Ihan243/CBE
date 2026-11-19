@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CBE (UCHS Program) — Don't Just Imagine. Go Further.</title>
   <meta name="description" content="Discover CBE (UCHS Program) — an empowering educational initiative bridging high school learning with real-world professional development, hands-on experience, and industry networking.">
-  <meta name="theme-color" content="#0B1020">
+  <meta name="theme-color" content="#00063B">
   
   <!-- Open Graph -->
   <meta property="og:title" content="CBE (UCHS Program) — Don't Just Imagine. Go Further.">
@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
 
   <!-- Branded CBE crest favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/cbe-program-badge.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/uchs-eagle.svg">
 
   <!-- Tailwind CSS CDN with forms and container queries -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -25,22 +25,22 @@
       theme: {
         extend: {
           colors: {
-            'midnight-navy': '#0B1020',
-            'deep-navy': '#121B30',
-            'off-white': '#F5F6F2',
-            'lime-green': '#C9F36B',
-            'soft-indigo': '#7584FF',
+            'midnight-navy': '#00063B',
+            'deep-navy': '#0B1648',
+            'off-white': '#F8F9FC',
+            'lime-green': '#C9AF12',
+            'soft-indigo': '#8EA4D0',
             'white': '#FFFFFF',
-            'card-lila': '#E8E7FA',
-            'card-lime': '#EAF9D2',
-            'card-gray': '#F0F2EB',
-            'light-primary': '#0B1020',
+            'card-lila': '#E6EBF5',
+            'card-lime': '#F9F0CF',
+            'card-gray': '#F2F4F8',
+            'light-primary': '#00063B',
             'light-on-primary': '#FFFFFF',
-            'light-surface': '#F5F6F2',
-            'light-on-surface': '#0B1020',
-            'dark-primary': '#C9F36B',
-            'dark-on-primary': '#0B1020',
-            'dark-surface': '#0B1020',
+            'light-surface': '#F8F9FC',
+            'light-on-surface': '#00063B',
+            'dark-primary': '#C9AF12',
+            'dark-on-primary': '#00063B',
+            'dark-surface': '#00063B',
             'dark-on-surface': '#FFFFFF',
           },
           borderRadius: {
@@ -112,7 +112,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Grotesk:wght@300..700&family=Teko:wght@500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
   
   <style>
@@ -127,6 +127,13 @@
       direction: ltr;
       vertical-align: middle;
     }
+
+
+    /* Union City High School brand accents */
+    .uchs-brand-heading {font-family:'Teko','Space Grotesk',sans-serif;letter-spacing:.065em;line-height:.95;}
+    .uchs-gold-rule {height:3px;width:58px;background:#C9AF12;border-radius:8px;}
+    .uchs-eagle-glow {filter:drop-shadow(0 10px 16px rgba(0,0,0,.38));}
+    .uchs-photo-treatment {filter:saturate(.82) contrast(1.06) brightness(.9);}
 
     /* Keyframe Animations */
     @keyframes marqueeAnimation {
@@ -175,14 +182,14 @@
       width: 8px;
     }
     ::-webkit-scrollbar-track {
-      background: #0B1020;
+      background: #00063B;
     }
     ::-webkit-scrollbar-thumb {
-      background: #1e293b;
+      background: #24345D;
       border-radius: 4px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #C9F36B;
+      background: #C9AF12;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -214,7 +221,11 @@
       
       <!-- Logo -->
       <a href="#hero" class="flex items-center gap-2 group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-lime-green rounded-lg p-1">
-        <img src="assets/cbe-wordmark.svg" alt="CBE — UCHS Program" width="170" height="47" class="block w-[148px] sm:w-[170px] h-auto transition-transform duration-300 group-hover:scale-[1.03]" decoding="async">
+        <img src="assets/uchs-eagle.svg" alt="" aria-hidden="true" width="48" height="54" class="block w-10 h-12 sm:w-11 sm:h-14 object-contain transition-transform duration-300 group-hover:scale-[1.04]" decoding="async">
+        <span class="flex flex-col justify-center">
+          <span class="block font-['Teko'] font-bold text-[29px] sm:text-[34px] leading-[.9] tracking-[.06em] text-white">UCHS <span class="text-white">CBE</span></span>
+          <span class="block font-headline text-[9px] sm:text-[10px] font-bold tracking-[.33em] text-lime-green mt-1">EARNED IT</span>
+        </span>
       </a>
 
       <!-- Desktop Nav Links -->
@@ -261,7 +272,7 @@
 
     <!-- Hero — Primera pantalla (High Impact 2-Column with Radial Violet Glow & Subtle Grid) -->
     <section id="hero" class="relative min-h-[calc(100vh-80px)] flex flex-col justify-between pt-12 pb-16 px-6 md:px-8 bg-grid-pattern overflow-hidden">
-      <!-- Radial Violet Lighting Effect -->
+      <!-- UCHS navy-and-gold ambient lighting -->
       <div class="absolute -top-40 right-0 w-[560px] h-[560px] bg-soft-indigo/20 blur-[130px] rounded-full pointer-events-none select-none"></div>
       <div class="absolute bottom-10 -left-20 w-[400px] h-[400px] bg-lime-green/10 blur-[120px] rounded-full pointer-events-none select-none"></div>
 
@@ -270,7 +281,7 @@
         <!-- Left Column (Typography & CTAs) -->
         <div class="lg:col-span-7 flex flex-col items-start reveal-on-scroll">
           
-          <!-- Green Tag -->
+          <!-- UCHS gold tag -->
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-lime-green/10 border border-lime-green/30 text-lime-green font-headline text-label-sm uppercase tracking-wider mb-6">
             <span class="w-2 h-2 rounded-full bg-lime-green animate-pulse"></span>
             YOUR FUTURE STARTS HERE
@@ -290,7 +301,7 @@
 
           <!-- Buttons -->
           <div class="flex flex-wrap items-center gap-4 w-full sm:w-auto">
-            <!-- Explore CBE (Lime Green) -->
+            <!-- Explore CBE (UCHS Gold) -->
             <a href="#pillars" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-lime-green text-midnight-navy font-headline text-label-lg font-bold shadow-lg hover:-translate-y-0.5 hover:shadow-xl hover:shadow-lime-green/20 transition-all duration-state-change active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-lime-green">
               <span>Explore CBE</span>
               <span class="material-symbols-outlined text-body-lg">arrow_downward</span>
@@ -327,7 +338,7 @@
             </div>
 
             <!-- Brand emblem floats above the portrait without covering its main subject -->
-            <img src="assets/cbe-program-badge.svg" alt="" aria-hidden="true" width="112" height="112" class="absolute -top-5 -right-3 z-20 w-[84px] sm:w-[105px] h-auto drop-shadow-2xl rotate-6 pointer-events-none" loading="eager">
+            <img src="assets/uchs-eagle.svg" alt="" aria-hidden="true" width="112" height="124" class="absolute -top-8 -right-2 z-20 w-[84px] sm:w-[105px] h-auto drop-shadow-2xl rotate-6 pointer-events-none" loading="eager">
 
             <!-- Tall Frame with highly rounded top corners & slight rotation -->
             <div class="w-full h-full rounded-3xl overflow-hidden rotate-1 hover:rotate-0 transition-transform duration-500 shadow-2xl shadow-black/80 border border-white/15 bg-deep-navy relative group">
@@ -374,7 +385,7 @@
 
     </section>
 
-    <!-- Franja animada — Marquee (Lime Green Background, 27s Continuous Loop) -->
+    <!-- Franja animada — Marquee (UCHS gold background, 27s continuous loop) -->
     <div id="marquee" class="w-full bg-lime-green text-midnight-navy py-4 overflow-hidden border-y-2 border-midnight-navy relative z-20 select-none shadow-md">
       <div class="animate-marquee flex items-center whitespace-nowrap">
         <!-- Sequence Repeated for Seamless Endless Translation -->
@@ -811,7 +822,11 @@
         <!-- Brand & Description -->
         <div class="md:col-span-5">
           <div class="flex items-center gap-2 mb-4">
-            <img src="assets/cbe-wordmark.svg" alt="CBE — UCHS Program" width="208" height="58" class="w-[208px] h-auto" loading="lazy" decoding="async">
+            <img src="assets/uchs-eagle.svg" alt="" aria-hidden="true" width="70" height="80" class="w-[64px] h-[76px] object-contain" loading="lazy" decoding="async">
+            <span class="flex flex-col justify-center">
+              <span class="font-['Teko'] font-bold text-[38px] tracking-[.05em] leading-none text-white">UCHS CBE</span>
+              <span class="text-lime-green font-headline font-bold text-[10px] tracking-[.35em]">EARNED IT</span>
+            </span>
           </div>
           <p class="font-body text-body-sm text-white/70 max-w-sm leading-relaxed mb-6">
             An empowering educational program focused on connecting students with real-world learning, professional experience, career pathways, and mentorship.
