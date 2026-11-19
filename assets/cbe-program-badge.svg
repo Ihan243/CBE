@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="title">
+<title id="title">UCHS CBE Program emblem</title>
+<defs><linearGradient id="b" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#1D2A59"/><stop offset="1" stop-color="#0B1020"/></linearGradient></defs>
+<circle cx="100" cy="100" r="96" fill="url(#b)" stroke="#C9F36B" stroke-width="5"/>
+<circle cx="100" cy="100" r="85" fill="none" stroke="#7584FF" stroke-opacity=".65" stroke-width="2"/>
+<path d="M48 70 100 44 152 70 100 96Z" fill="#7584FF"/>
+<path d="M65 83v20c18 16 53 16 70 0V83l-35 17Z" fill="#4659A4"/>
+<path d="M152 70v33" stroke="#F5F6F2" stroke-width="4" stroke-linecap="round"/>
+<circle cx="152" cy="108" r="5" fill="#C9F36B"/>
+<path d="M47 115c31 1 59-13 81-35" stroke="#C9F36B" stroke-width="8" fill="none" stroke-linecap="round"/>
+<path d="m115 82 17-9-1 18" stroke="#C9F36B" stroke-width="7" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="27" y="123" width="146" height="45" rx="13" fill="#0B1020" stroke="#C9F36B" stroke-width="2"/>
+<text x="100" y="156" fill="#F5F6F2" font-size="33" text-anchor="middle" font-weight="800" font-family="Arial,sans-serif" letter-spacing="1">CBE</text>
+<text x="100" y="184" fill="#C9F36B" font-size="10" text-anchor="middle" font-weight="700" font-family="Arial,sans-serif" letter-spacing="3">UCHS PROGRAM</text>
+</svg>
