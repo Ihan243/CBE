@@ -12,8 +12,8 @@
   <meta property="og:description" content="Connect students with real-world learning, career exploration, hands-on experience, and professional networking.">
   <meta property="og:type" content="website">
 
-  <!-- Favicon (SVG lime dot badge) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230B1020'/><circle cx='16' cy='16' r='7' fill='%23C9F36B'/></svg>">
+  <!-- Branded CBE crest favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/cbe-program-badge.svg">
 
   <!-- Tailwind CSS CDN with forms and container queries -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -214,12 +214,7 @@
       
       <!-- Logo -->
       <a href="#hero" class="flex items-center gap-2 group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-lime-green rounded-lg p-1">
-        <span class="font-headline font-bold text-headline-md tracking-tighter text-white group-hover:text-lime-green transition-colors">
-          CBE<span class="text-lime-green group-hover:text-white transition-colors">.</span>
-        </span>
-        <span class="font-headline text-label-sm uppercase px-2 py-0.5 rounded bg-white/10 text-white/80 border border-white/10 hidden sm:inline-block">
-          UCHS Program
-        </span>
+        <img src="assets/cbe-wordmark.svg" alt="CBE — UCHS Program" width="170" height="47" class="block w-[148px] sm:w-[170px] h-auto transition-transform duration-300 group-hover:scale-[1.03]" decoding="async">
       </a>
 
       <!-- Desktop Nav Links -->
@@ -331,13 +326,16 @@
               </svg>
             </div>
 
+            <!-- Brand emblem floats above the portrait without covering its main subject -->
+            <img src="assets/cbe-program-badge.svg" alt="" aria-hidden="true" width="112" height="112" class="absolute -top-5 -right-3 z-20 w-[84px] sm:w-[105px] h-auto drop-shadow-2xl rotate-6 pointer-events-none" loading="eager">
+
             <!-- Tall Frame with highly rounded top corners & slight rotation -->
             <div class="w-full h-full rounded-3xl overflow-hidden rotate-1 hover:rotate-0 transition-transform duration-500 shadow-2xl shadow-black/80 border border-white/15 bg-deep-navy relative group">
               
               <img 
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" 
-                alt="Students collaborating enthusiastically in a modern CBE workshop session" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-750 ease-out" 
+                alt="Students working collaboratively around a table — illustrative photography" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-750 ease-out" style="filter: saturate(.82) contrast(1.06) brightness(.94)" 
                 loading="eager"
                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80'"
               >
@@ -813,12 +811,7 @@
         <!-- Brand & Description -->
         <div class="md:col-span-5">
           <div class="flex items-center gap-2 mb-4">
-            <span class="font-headline font-bold text-headline-md tracking-tighter text-white">
-              CBE<span class="text-lime-green">.</span>
-            </span>
-            <span class="font-headline text-label-sm uppercase px-2 py-0.5 rounded bg-white/10 text-white/80 border border-white/10">
-              UCHS Program
-            </span>
+            <img src="assets/cbe-wordmark.svg" alt="CBE — UCHS Program" width="208" height="58" class="w-[208px] h-auto" loading="lazy" decoding="async">
           </div>
           <p class="font-body text-body-sm text-white/70 max-w-sm leading-relaxed mb-6">
             An empowering educational program focused on connecting students with real-world learning, professional experience, career pathways, and mentorship.
