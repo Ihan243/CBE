@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 94" role="img" aria-labelledby="title desc">
+<title id="title">CBE — UCHS Program</title><desc id="desc">Modern CBE identity with graduation cap, career growth arrow and a light wordmark.</desc>
+<defs><linearGradient id="indigo" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9AA6FF"/><stop offset="1" stop-color="#6879EA"/></linearGradient></defs>
+<g transform="translate(4 4)">
+ <path d="M3 31 43 11 82 31 43 51Z" fill="url(#indigo)"/>
+ <path d="M21 43v15c12 11 32 12 44 0V43L43 54Z" fill="#333F7A"/>
+ <path d="M82 32v21" fill="none" stroke="#F5F6F2" stroke-width="3.5" stroke-linecap="round"/>
+ <circle cx="82" cy="58" r="4" fill="#C9F36B"/>
+ <path d="M13 73c22 2 46-9 60-28" fill="none" stroke="#C9F36B" stroke-width="7" stroke-linecap="round"/>
+ <path d="m59 44 18-6-1 19" fill="none" stroke="#C9F36B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+ <circle cx="24" cy="72" r="4" fill="#F5F6F2"/><circle cx="42" cy="65" r="4" fill="#F5F6F2"/><circle cx="60" cy="54" r="4" fill="#F5F6F2"/>
+</g>
+<text x="104" y="69" fill="#F5F6F2" font-size="72" font-weight="800" font-family="Space Grotesk,Arial,sans-serif" letter-spacing="-5">CBE</text>
+<circle cx="313" cy="66" r="7" fill="#C9F36B"/>
+<text x="105" y="87" fill="#A9B5CD" font-size="11" font-weight="700" font-family="Arial,sans-serif" letter-spacing="2.5">UCHS PROGRAM</text>
+</svg>
