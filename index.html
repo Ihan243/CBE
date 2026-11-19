@@ -208,9 +208,146 @@
         scroll-behavior: auto !important;
       }
     }
+  
+    /* ===== UCHS CBE: interactive 3D book entrance ===== */
+    #cbe-book-intro[hidden], #cbe-book-replay[hidden] {display:none!important}
+    body.cbi-lock {overflow:hidden}
+    #cbe-book-intro {
+      position:fixed;inset:0;z-index:1000;isolation:isolate;overflow:hidden;
+      display:flex;align-items:center;justify-content:center;flex-direction:column;color:#fff;
+      background:radial-gradient(ellipse at 50% 45%,#19265e 0%,#0a1649 35%,#00063B 72%,#000321 100%);
+      transition:opacity 180ms linear;
+    }
+    #cbe-book-intro::before {
+      content:"";position:absolute;inset:0;pointer-events:none;opacity:.55;
+      background-image:linear-gradient(#ffffff09 1px,transparent 1px),linear-gradient(90deg,#ffffff09 1px,transparent 1px);
+      background-size:56px 56px;
+    }
+    #cbe-book-intro.cbi-fade {opacity:0;pointer-events:none}
+    .cbi-top {position:absolute;top:clamp(22px,4vh,42px);z-index:3;display:flex;align-items:center;gap:12px;
+      font:800 clamp(9px,1vw,12px)/1.3 "Space Grotesk",Arial,sans-serif;letter-spacing:.26em;
+      text-transform:uppercase;color:#d6dcec;transition:opacity .35s,transform .35s;}
+    .cbi-top::before,.cbi-top::after {content:"";width:32px;height:1px;background:#C9AF12}
+    .cbi-stage {position:relative;z-index:2;display:grid;place-items:center;
+      width:min(94vw,780px);height:min(68svh,650px);perspective:1600px;transform-style:preserve-3d;
+      transform:translateY(0) scale(1);transition:transform 1150ms cubic-bezier(.62,.02,.2,1);will-change:transform}
+    .cbi-shadow {position:absolute;top:calc(50% + 196px);left:50%;transform:translate(-50%,-50%);
+      width:300px;height:40px;border-radius:50%;background:#000c;filter:blur(24px);transition:opacity .6s}
+    .cbi-book {
+      --bw:clamp(192px,26vw,290px);--bh:clamp(268px,36vw,400px);
+      position:relative;width:var(--bw);height:var(--bh);background:transparent;border:0;padding:0;margin:0;
+      transform:rotateX(7deg) rotateY(-13deg);transform-style:preserve-3d;cursor:pointer;
+      transition:transform 1100ms cubic-bezier(.62,.02,.2,1);animation:cbi-breathe 4.2s ease-in-out infinite;
+      -webkit-tap-highlight-color:transparent;will-change:transform;
+    }
+    .cbi-book:focus-visible {outline:3px solid #f5db76;outline-offset:13px;border-radius:8px}
+    .cbi-book:disabled{cursor:default}
+    .cbi-back,.cbi-spine,.cbi-stack,.cbi-page,.cbi-cover {
+      position:absolute;inset:0;border-radius:5px 13px 13px 5px;transform-style:preserve-3d;
+    }
+    .cbi-back{background:#081344;border:2px solid #C9AF12;transform:translate3d(3px,5px,-20px);box-shadow:12px 17px 30px #000b}
+    .cbi-spine{right:auto;width:16px;background:linear-gradient(90deg,#020621,#283468 50%,#09133f);
+      transform:translate3d(-12px,2px,8px);border-radius:6px 0 0 6px}
+    .cbi-stack{inset:5px 0 0 9px;transform:translate3d(3px,3px,1px);
+      background:repeating-linear-gradient(to bottom,#f9f5e4 0,#f9f5e4 3px,#b4adc0 4px,#f8f7ef 5px)}
+    .cbi-page{transform:translate3d(0,0,3px);background:linear-gradient(90deg,#c5c1b4,#fcfaef 12%,#fffef9 72%,#e6e0ca);
+      padding:29px 23px;color:#00063B;text-align:left;overflow:hidden}
+    .cbi-page-label{display:block;color:#967e19;font:800 9px Arial,sans-serif;letter-spacing:.2em}
+    .cbi-page-title{display:block;margin-top:29px;font:800 clamp(23px,2.2vw,31px)/.95 "Space Grotesk",Arial,sans-serif;letter-spacing:-.04em}
+    .cbi-page-text{display:block;margin-top:19px;color:#505b76;font:400 12px/1.6 Arial,sans-serif}
+    .cbi-page-footer{position:absolute;bottom:20px;left:23px;font:800 9px Arial,sans-serif;letter-spacing:.15em;color:#a18c2c}
+    .cbi-cover{transform-origin:0% 50%;transform:translate3d(0,0,14px) rotateY(0deg);
+      transition:transform 960ms cubic-bezier(.45,.01,.2,1);z-index:5;will-change:transform}
+    .cbi-cover-front,.cbi-cover-back{position:absolute;inset:0;overflow:hidden;border-radius:5px 13px 13px 5px;backface-visibility:hidden}
+    .cbi-cover-front{display:flex;align-items:center;justify-content:space-between;flex-direction:column;
+      padding:27px 13px 31px;background:radial-gradient(circle at 80% 4%,#233578,#091743 35%,#000832 85%);
+      border:2px solid #a78f28;box-shadow:inset 9px 0 12px #0009,9px 12px 28px #0009}
+    .cbi-cover-front::before{content:"";position:absolute;inset:13px;border:1px solid #C9AF1288;border-radius:3px 7px 7px 3px;pointer-events:none}
+    .cbi-cover-front::after{content:"";position:absolute;top:0;bottom:0;left:10px;width:4px;background:linear-gradient(#e0c34c55,#ffffff08,#e0c34c55);pointer-events:none}
+    .cbi-school{display:block;color:#ded4a5;font:800 clamp(8px,1.1vw,10px)/1.3 "Space Grotesk",Arial,sans-serif;letter-spacing:.21em;text-align:center}
+    .cbi-eagle{display:block;width:clamp(92px,11.5vw,140px);height:clamp(117px,14vw,166px);object-fit:contain;margin:auto 0 10px;filter:drop-shadow(0 5px 6px #0009)}
+    .cbi-cover-title{display:block;white-space:nowrap;font:700 clamp(29px,3.6vw,43px)/1 "Teko",Impact,Arial,sans-serif;letter-spacing:.055em;color:white;text-shadow:2px 3px 0 #0009}
+    .cbi-cover-motto{display:block;color:#f3d65c;font:800 clamp(12px,1.7vw,18px)/1.2 "Space Grotesk",Arial,sans-serif;letter-spacing:.42em;padding-left:.4em;margin-top:12px}
+    .cbi-cover-caption{display:block;color:#ffffff95;font:700 8px/1.3 "Space Grotesk",Arial,sans-serif;letter-spacing:.14em;text-align:center;margin-top:14px}
+    .cbi-cover-back{transform:rotateY(180deg);background:linear-gradient(90deg,#b4ae9d,#fffef5 13%,#ece8db);border:1px solid #d5ceb7;box-shadow:inset -9px 0 18px #0002}
+    .cbi-cover-back::before{content:"UCHS / CBE";display:block;margin-top:32px;text-align:center;color:#7a7365;font:800 13px Arial,sans-serif;letter-spacing:.18em;transform:scaleX(-1)}
+    .cbi-hint{position:absolute;bottom:clamp(33px,7vh,82px);z-index:3;display:flex;align-items:center;flex-direction:column;gap:12px;
+      color:#fff;text-transform:uppercase;letter-spacing:.15em;text-align:center;transition:opacity .35s,transform .35s}
+    .cbi-hint-main{display:block;border:1px solid #C9AF1270;background:#C9AF1217;border-radius:99px;padding:11px 17px;
+      color:#f2d85e;font:800 11px/1.2 "Space Grotesk",Arial,sans-serif;letter-spacing:.14em}
+    .cbi-hint-sub{font:500 10px Arial,sans-serif;color:#ffffff85;text-transform:none;letter-spacing:.07em}
+    .cbi-flood{position:absolute;left:50%;top:50%;z-index:8;pointer-events:none;border-radius:50%;background:#00063B;
+      width:100vmax;height:100vmax;opacity:0;transform:translate(-50%,-50%) scale(0);
+      transition:transform 770ms cubic-bezier(.7,.01,.23,1),opacity 10ms linear;will-change:transform}
+    #cbe-book-intro.cbi-opening .cbi-stage{transform:translateY(-2vh) scale(2.3)}
+    #cbe-book-intro.cbi-opening .cbi-book{transform:rotateX(0deg) rotateY(0deg);animation:none}
+    #cbe-book-intro.cbi-opening .cbi-cover{transform:translate3d(0,0,14px) rotateY(-167deg)}
+    #cbe-book-intro.cbi-opening .cbi-hint,#cbe-book-intro.cbi-opening .cbi-top{opacity:0;transform:translateY(10px)}
+    #cbe-book-intro.cbi-opening .cbi-shadow{opacity:0}
+    #cbe-book-intro.cbi-opening .cbi-flood{opacity:1;transform:translate(-50%,-50%) scale(2.2);transition-delay:520ms,520ms}
+    @keyframes cbi-breathe{0%,100%{transform:rotateX(7deg) rotateY(-13deg) translateY(0)}50%{transform:rotateX(7deg) rotateY(-13deg) translateY(-9px)}}
+    #cbe-book-replay{position:fixed;top:92px;right:20px;z-index:85;display:inline-flex;align-items:center;gap:8px;
+      background:#00063bed;color:#fff;border:1px solid #C9AF127d;border-radius:999px;padding:10px 15px;
+      box-shadow:0 10px 28px #0006;backdrop-filter:blur(16px);font:700 12px "Space Grotesk",Arial,sans-serif;
+      cursor:pointer;transition:transform .2s,background .2s}
+    #cbe-book-replay:hover{transform:translateY(-2px);background:#17255c}
+    #cbe-book-replay:focus-visible{outline:3px solid #C9AF12;outline-offset:3px}
+    @media(max-width:640px){
+      .cbi-top{letter-spacing:.12em;gap:8px}.cbi-top::before,.cbi-top::after{width:18px}
+      .cbi-stage{height:66svh}.cbi-book{--bw:195px;--bh:275px}
+      .cbi-hint{bottom:7vh}.cbi-hint-main{font-size:10px}
+      .cbi-shadow{width:205px;top:calc(50% + 140px)}
+      #cbe-book-intro.cbi-opening .cbi-stage{transform:translateY(-2vh) scale(2.05)}
+      #cbe-book-replay{top:84px;right:12px;font-size:11px;padding:9px 12px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .cbi-book{animation:none!important}
+      #cbe-book-intro *,#cbe-book-intro *::before,#cbe-book-intro *::after{animation:none!important;transition-duration:.01ms!important;transition-delay:0ms!important}
+    }
+    /* ===== End book entrance ===== */
+
   </style>
 </head>
 <body class="bg-midnight-navy text-white font-body selection:bg-lime-green selection:text-midnight-navy antialiased min-h-screen">
+
+  
+  <!-- Interactive UCHS CBE book gate: real main site is under this overlay. -->
+  <div id="cbe-book-intro" role="dialog" aria-modal="true" aria-label="Open the UCHS CBE book">
+    <div class="cbi-top">Union City High School &middot; CBE</div>
+    <div class="cbi-stage">
+      <span class="cbi-shadow" aria-hidden="true"></span>
+      <button class="cbi-book" id="cbe-book-open" type="button" aria-label="Open the book to enter the CBE website">
+        <span class="cbi-back" aria-hidden="true"></span>
+        <span class="cbi-spine" aria-hidden="true"></span>
+        <span class="cbi-stack" aria-hidden="true"></span>
+        <span class="cbi-page" aria-hidden="true">
+          <span class="cbi-page-label">CHAPTER 01</span>
+          <span class="cbi-page-title">YOUR FUTURE<br>STARTS HERE.</span>
+          <span class="cbi-page-text">Learn. Earn. Experience. Network.<br>A new chapter begins with your next step.</span>
+          <span class="cbi-page-footer">UCHS &middot; CBE</span>
+        </span>
+        <span class="cbi-cover" aria-hidden="true">
+          <span class="cbi-cover-front">
+            <span class="cbi-school">UNION CITY HIGH SCHOOL</span>
+            <img class="cbi-eagle" src="assets/uchs-eagle.svg" alt="" width="135" height="165" draggable="false">
+            <span class="cbi-cover-title">UCHS CBE</span>
+            <span class="cbi-cover-motto">EARNED IT</span>
+            <span class="cbi-cover-caption">COOPERATIVE BUSINESS EDUCATION</span>
+          </span>
+          <span class="cbi-cover-back"></span>
+        </span>
+      </button>
+    </div>
+    <div class="cbi-hint" aria-hidden="true">
+      <span class="cbi-hint-main">&#10022; &nbsp; CLICK TO OPEN THE BOOK &nbsp; &#10022;</span>
+      <span class="cbi-hint-sub">or press Enter / Space</span>
+    </div>
+    <div class="cbi-flood" aria-hidden="true"></div>
+  </div>
+  <button id="cbe-book-replay" type="button" hidden aria-label="Close the book and replay the introduction">
+    <span class="material-symbols-outlined" style="color:#C9AF12;font-size:18px" aria-hidden="true">menu_book</span>
+    <span>Close Book</span>
+  </button>
 
   <!-- Scroll Progress Bar (Lime Green Indicator on Top Edge) -->
   <div id="scroll-progress-bar" class="fixed top-0 left-0 h-1 bg-lime-green z-50 transition-all duration-75" style="width: 0%;"></div>
@@ -1226,6 +1363,74 @@
         submitBtn.innerHTML = previousButtonHtml;
       }
     }
+  </script>
+
+
+  <script>
+  (() => {
+    "use strict";
+    const intro = document.getElementById("cbe-book-intro");
+    const openBtn = document.getElementById("cbe-book-open");
+    const replayBtn = document.getElementById("cbe-book-replay");
+    if (!intro || !openBtn || !replayBtn) return;
+    const siteParts = [...document.querySelectorAll("body > header, body > main, body > footer, #application-modal")];
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let state = "closed";
+    let timer = 0;
+    const duration = () => reducedMotion.matches ? 35 : 1450;
+    const lockSite = locked => {
+      siteParts.forEach(element => {element.inert = locked;});
+      document.body.classList.toggle("cbi-lock", locked);
+    };
+    function openBook() {
+      if (state !== "closed") return;
+      state = "opening";
+      openBtn.disabled = true;
+      clearTimeout(timer);
+      intro.classList.add("cbi-opening");
+      timer = setTimeout(() => {
+        if (state !== "opening") return;
+        intro.classList.add("cbi-fade");
+        timer = setTimeout(() => {
+          intro.hidden = true;
+          intro.classList.remove("cbi-fade", "cbi-opening");
+          lockSite(false);
+          replayBtn.hidden = false;
+          state = "open";
+          replayBtn.focus({preventScroll:true});
+        }, reducedMotion.matches ? 0 : 190);
+      }, duration());
+    }
+    function closeBook() {
+      if (state !== "open") return;
+      state = "closing";
+      clearTimeout(timer);
+      replayBtn.hidden = true;
+      // Close the application modal if the user had opened it on the site.
+      if (typeof window.closeApplicationModal === "function") window.closeApplicationModal();
+      lockSite(true);
+      intro.hidden = false;
+      intro.classList.remove("cbi-fade");
+      // Render the fully opened book before reversing the cover, zoom and page reveal.
+      intro.classList.add("cbi-opening");
+      void intro.offsetWidth;
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        intro.classList.remove("cbi-opening");
+        timer = setTimeout(() => {
+          state = "closed";
+          openBtn.disabled = false;
+          openBtn.focus({preventScroll:true});
+        }, duration());
+      }));
+    }
+    openBtn.addEventListener("click", openBook); // Enter and Space work natively on the button.
+    replayBtn.addEventListener("click", closeBook);
+    document.addEventListener("keydown", event => {
+      if (state === "open" && event.key === "Escape") closeBook();
+    });
+    lockSite(true);
+    openBtn.focus({preventScroll:true});
+  })();
   </script>
 
 </body>
