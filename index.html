@@ -891,7 +891,7 @@
       </div>
 
       <!-- Application Form -->
-      <form id="interest-form" onsubmit="handleFormSubmit(event)" method="POST" action="https://formsubmit.co/ajax/galindoAv2@gmail.com" class="space-y-4">
+      <form id="interest-form" onsubmit="handleFormSubmit(event)" method="POST" action="https://formsubmit.co/ajax/galindoav2@gmail.com" class="space-y-4">
         <!-- FormSubmit is an external email delivery service; activation is required on the recipient inbox. -->
         <input type="hidden" name="_subject" value="CBE — New student interest request">
         <input type="hidden" name="_template" value="table">
@@ -1130,7 +1130,10 @@
         success.classList.remove('hidden');
       } catch (err) {
         console.error('CBE form delivery error', err);
-        error.textContent = 'We could not submit your request. Please try again later or contact the program directly.';
+        const activationRequired = /activat|confirm your form/i.test(String(err?.message || ''));
+        error.textContent = activationRequired
+          ? 'Email delivery is not activated yet. The request was not delivered. Please contact CBE staff directly until the form is enabled.'
+          : 'Your request could not be delivered. Please try again later or contact CBE staff directly.';
         error.classList.remove('hidden');
       } finally {
         submitBtn.disabled = false;
