@@ -1,11 +1,11 @@
 ---
 name: "CBE — UCHS Program Design System"
-description: "A dynamic, editorial, and tech-forward design system blending deep midnight tones, electric lime accents, and soft indigo highlights for the CBE educational program."
+description: "A dynamic, editorial, and tech-forward design system blending deep midnight tones, UCHS navy-and-gold school colors, and restrained light-blue highlights for the CBE educational program."
 ---
 
 ## Overview
 
-CBE (UCHS Program) connects students with real-world learning, career exploration, hands-on experience, and professional networking. The design combines modern editorial craft, tech minimalism, bold asymmetric layouts, bento grid structures, and electric high-contrast accents. It rejects dry institutional tropes in favor of an energetic digital agency feel tailored for forward-looking students.
+CBE (UCHS Program) connects students with real-world learning, career exploration, hands-on experience, and professional networking. The design combines modern editorial craft, tech minimalism, bold asymmetric layouts, bento grid structures, and high-contrast UCHS gold accents. It rejects dry institutional tropes in favor of an energetic digital agency feel tailored for forward-looking students.
 
 - **Audience:** High school and pre-college students looking to unlock practical career pathways and real-world skills.
 - **Tone & Mood:** Youthful, ambitious, polished, vibrant, and accessible.
@@ -13,36 +13,45 @@ CBE (UCHS Program) connects students with real-world learning, career exploratio
 
 ## Colors
 
-The color palette centers around **Midnight Navy** and **Deep Navy** dark foundations contrasted with crisp **Off-white** and bright **White** surfaces, brought to life with an energetic **Lime Green** primary accent and thoughtful **Soft Indigo** highlights.
+The color palette centers around **Midnight Navy** and **Deep Navy** dark foundations contrasted with crisp **Off-white** and bright **White** surfaces, brought to life with an energetic **UCHS Gold** primary accent and thoughtful **School Blue** highlights.
 
-- **Lime Green:** The driving high-energy accent for primary calls-to-action, key badges, and marquee highlights.
+- **UCHS Gold:** The school-aligned high-energy accent for primary calls-to-action, key badges, and marquee highlights.
 - **Midnight Navy:** Ground dark surface for hero, journey, and footer zones.
 - **Deep Navy:** Secondary elevated dark surface.
-- **Soft Indigo:** Editorial secondary accent for key typographic highlights and category markers.
+- **School Blue:** Editorial secondary accent for key typographic highlights and category markers.
 - **Off-white:** Warm, readable light ground for daylight content sections.
 
 ```yaml
 colors:
-  midnight-navy: "#0B1020"
-  deep-navy: "#121B30"
-  off-white: "#F5F6F2"
-  lime-green: "#C9F36B"
-  soft-indigo: "#7584FF"
+  midnight-navy: "#00063B"
+  deep-navy: "#0B1648"
+  off-white: "#F8F9FC"
+  lime-green: "#C9AF12"
+  soft-indigo: "#8EA4D0"
   white: "#FFFFFF"
-  card-lila: "#E8E7FA"
-  card-lime: "#EAF9D2"
-  card-gray: "#F0F2EB"
+  card-lila: "#E6EBF5"
+  card-lime: "#F9F0CF"
+  card-gray: "#F2F4F8"
   light:
-    primary: "#0B1020"
+    primary: "#00063B"
     on-primary: "#FFFFFF"
-    surface: "#F5F6F2"
-    on-surface: "#0B1020"
+    surface: "#F8F9FC"
+    on-surface: "#00063B"
   dark:
-    primary: "#C9F36B"
-    on-primary: "#0B1020"
-    surface: "#0B1020"
+    primary: "#C9AF12"
+    on-primary: "#00063B"
+    surface: "#00063B"
     on-surface: "#FFFFFF"
 ```
+
+## Official-school-inspired identity
+
+- Visual reference: supplied UCHS CBE *EARNED IT* eagle art.
+- Primary transparent eagle asset: `assets/uchs-eagle.svg`.
+- The display wordmark reads **UCHS CBE** with the **EARNED IT** slogan.
+- Navbar, hero badge, footer and favicon use the UCHS eagle in white and school gold.
+- Legacy Tailwind aliases `lime-green` and `soft-indigo` are retained in HTML for compatibility, but now resolve to UCHS gold and supporting school blue.
+- The site is intended to preserve its modern editorial layout rather than mimic the school's older website template.
 
 ## Typography
 
