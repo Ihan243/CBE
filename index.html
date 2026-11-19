@@ -1425,9 +1425,6 @@
     }
     openBtn.addEventListener("click", openBook); // Enter and Space work natively on the button.
     replayBtn.addEventListener("click", closeBook);
-    document.addEventListener("keydown", event => {
-      if (state === "open" && event.key === "Escape") closeBook();
-    });
     lockSite(true);
     openBtn.focus({preventScroll:true});
   })();
